@@ -1,0 +1,215 @@
+/* Album Container */
+.album-wrapper {
+    position: relative;
+    width: 90vw;
+    max-width: 1000px;
+    height: 70vh;
+    max-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.album {
+    position: relative;
+    width: 50%; /* Half the wrapper when closed (square format like a CD cover) */
+    aspect-ratio: 1 / 1;
+    max-height: 100%;
+    transition: width var(--t-slow), transform var(--t-slow);
+    display: flex;
+}
+
+/* Slide out state - album expands to full width to reveal inside */
+.album.is-open {
+    width: 100%;
+}
+
+.album-cover, .album-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background: var(--c-bg);
+    overflow: hidden;
+    transition: opacity var(--t-base), transform var(--t-slow);
+}
+
+/* When album is open, cover fades and inside becomes visible */
+.album.is-open .album-cover {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+.album.is-open .album-inside {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.album-cover {
+    z-index: 2;
+    cursor: none; /* Inherit custom cursor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    /* Synchronicity style brush strokes but with retro pink/fuchsia/cyan */
+    background-image: 
+        linear-gradient(transparent 15%, var(--c-accent-cyan) 15%, var(--c-accent-cyan) 30%, transparent 30%),
+        linear-gradient(transparent 45%, var(--c-accent-fuchsia) 45%, var(--c-accent-fuchsia) 60%, transparent 60%),
+        linear-gradient(transparent 75%, var(--c-accent-pink) 75%, var(--c-accent-pink) 90%, transparent 90%);
+    background-size: 100% 100%;
+    transform: scale(1);
+}
+
+.album-cover::after {
+    content: 'CLICK TO OPEN';
+    position: absolute;
+    bottom: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--c-bg);
+    background: var(--c-text);
+    padding: 4px 8px;
+    opacity: 0.8;
+}
+
+.cover-content {
+    background: rgba(0,0,0,0.85);
+    padding: var(--space-md);
+    text-align: center;
+    border: 2px solid var(--c-text);
+}
+
+.cover-content h1 {
+    font-size: 3rem;
+    color: var(--c-text);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cover-content p {
+    font-family: var(--font-mono);
+    color: var(--c-accent-fuchsia);
+    letter-spacing: 4px;
+}
+
+.album-inside {
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    background: #111;
+    border: 1px solid var(--c-border);
+    transform: scale(0.95);
+}
+
+.album-left, .album-right {
+    flex: 1;
+    padding: var(--space-lg);
+    overflow-y: auto;
+    height: 100%;
+}
+
+.album-left {
+    border-right: 1px solid var(--c-border);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a0515, #000);
+}
+
+.album-right {
+    position: relative;
+    background: var(--c-bg);
+}
+
+/* Tracklist in Album Left */
+.album-tracklist {
+    margin-top: var(--space-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.album-tracklist li {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+    color: var(--c-text-muted);
+    transition: color var(--t-fast);
+    padding-left: 30px;
+    position: relative;
+}
+
+.album-tracklist li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    color: var(--c-accent-pink);
+    transition: opacity var(--t-fast);
+}
+
+.album-tracklist li:hover {
+    color: var(--c-text);
+}
+
+.album-tracklist li.active {
+    color: var(--c-accent-fuchsia);
+}
+
+.album-tracklist li.active::before {
+    opacity: 1;
+}
+
+/* Content panels on Album Right */
+.album-track-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--t-base), visibility var(--t-base), transform var(--t-base);
+    transform: translateY(20px);
+    overflow-y: auto;
+}
+
+.album-track-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.album-track-content h2 {
+    color: var(--c-accent-pink);
+    border-bottom: 1px solid var(--c-border);
+    padding-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .album-inside {
+        flex-direction: column;
+    }
+    .album {
+        width: 90%;
+        aspect-ratio: auto;
+    }
+    .album-left, .album-right {
+        height: 50%;
+    }
+}

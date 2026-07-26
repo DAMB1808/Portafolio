@@ -1,0 +1,220 @@
+/* Common Track Styles */
+.track-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--t-slow);
+}
+
+.track.active .track-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* INTRO */
+.intro h1 {
+    margin-bottom: var(--space-xs);
+}
+
+.intro .subtitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--c-text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-lg);
+}
+
+.intro-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ABOUT */
+.about .text-block {
+    max-width: 600px;
+    font-size: 1.2rem;
+}
+
+/* PROJECTS */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--c-border);
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--c-border);
+    transition: padding var(--t-base), border-color var(--t-base);
+    position: relative;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    transition: transform var(--t-base);
+}
+
+.project-item[data-color="pink"]:hover::before { background-color: var(--c-accent-pink); }
+.project-item[data-color="blue"]:hover::before { background-color: var(--c-accent-blue); }
+.project-item[data-color="yellow"]:hover::before { background-color: var(--c-accent-yellow); }
+
+.project-item:hover {
+    padding-left: 20px;
+    border-bottom-color: var(--c-border-hover);
+}
+
+.project-item:hover::before {
+    transform: translateY(-50%) scale(1);
+}
+
+.project-year {
+    font-family: var(--font-mono);
+    color: var(--c-text-muted);
+    width: 80px;
+}
+
+.project-title {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.project-tech {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--c-text-light);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all var(--t-base);
+}
+
+.project-item:hover .project-tech {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* TECH STACK */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    border-top: 1px solid var(--c-border);
+    padding-top: var(--space-md);
+}
+
+.tech-category h4 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--c-text-muted);
+}
+
+/* EXPERIENCE */
+.timeline {
+    border-left: 1px solid var(--c-border);
+    padding-left: var(--space-md);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--space-lg);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: calc(var(--space-md) * -1 - 4px);
+    top: 5px;
+    width: 7px;
+    height: 7px;
+    background: var(--c-bg);
+    border: 1px solid var(--c-text);
+}
+
+.timeline-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item h4 {
+    margin-bottom: 0.25rem;
+}
+
+/* MUSIC */
+.albums-grid {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.album-item {
+    width: 150px;
+}
+
+.album-square {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--c-border);
+    margin-bottom: 0.5rem;
+    transition: filter var(--t-fast);
+    filter: grayscale(100%) opacity(0.5);
+}
+
+.album-item:hover .album-square {
+    filter: grayscale(0%) opacity(1);
+    background: var(--c-text); /* Fallback */
+}
+
+.album-item p {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+/* CONTACT */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.contact-link {
+    font-size: 2rem;
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+}
+
+.contact-link::after {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--c-accent-blue);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--t-fast);
+    pointer-events: none;
+}
+
+.contact-link:hover {
+    color: transparent;
+}
+
+.contact-link:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}

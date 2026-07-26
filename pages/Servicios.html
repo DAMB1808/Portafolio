@@ -1,68 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Servicios</title>
-    <link rel="stylesheet" href="../css/style/style.css">
-    <link rel="stylesheet" href="../css/layout/header.css">
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">Porta<span>folio</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="SobreMi.html">Sobre Mi</a></li>
-            <li><a href="Servicios.html" class="active">Servicios</a></li>
-            <li><a href="Contacto.html">Contacto</a></li>
-        </ul>
-    </header>
-
-    <main class="main-content" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: left;">
-        <h1 style="text-align: center; margin-bottom: 0.5rem;">Portafolio de <span class="title-gold">Proyectos</span></h1>
-        <p style="text-align: center; color: #666; margin-bottom: 4rem; font-size: 1.2rem;">Explora las aplicaciones y sistemas que he desarrollado demostrando mis capacidades técnicas.</p>
-
-        <div style="display: flex; flex-direction: column; gap: 4rem;">
-            <!-- Proyecto 1 -->
-            <article class="card" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <!-- Placeholder de imagen -->
-                    <div style="width: 100%; height: 300px; background-color: #111; border: 2px dashed var(--gold-accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.2rem;">
-                        [Insertar Captura del Proyecto Aquí]
-                    </div>
-                </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <span class="card-highlight">Aplicación Backend / Desktop</span>
-                    <h3 style="font-size: 2rem;">[Título del Proyecto 1]</h3>
-                    <p style="line-height: 1.8;"><strong>Descripción:</strong> [Explica de qué trata tu proyecto. Ejemplo: Un sistema completo para gestionar inventarios usando Java y MySQL con interfaz gráfica intuitiva.]</p>
-                    <p style="line-height: 1.8;"><strong>Habilidades aprendidas:</strong> [Ej. Conexión a bases de datos JDBC, patrones de diseño MVC, manejo de excepciones y UI.]</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="[Tu Enlace a GitHub]" target="_blank" class="btn-gold">Repositorio en GitHub</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Proyecto 2 -->
-            <article class="card" style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; flex-direction: row-reverse;">
-                <div style="flex: 1; min-width: 300px;">
-                    <div style="width: 100%; height: 300px; background-color: #111; border: 2px dashed var(--gold-accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.2rem;">
-                        [Insertar Captura del Proyecto Aquí]
-                    </div>
-                </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <span class="card-highlight">Desarrollo Web</span>
-                    <h3 style="font-size: 2rem;">[Título del Proyecto 2]</h3>
-                    <p style="line-height: 1.8;"><strong>Descripción:</strong> [Describe otro de tus mejores proyectos, finalizado y funcional. Ejemplo: Página web interactiva para un negocio local.]</p>
-                    <p style="line-height: 1.8;"><strong>Habilidades aprendidas:</strong> [Ej. Diseño de UI/UX, flexbox, grid, animaciones CSS e interactividad con JS.]</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="[Tu Enlace a GitHub]" target="_blank" class="btn-gold">Repositorio en GitHub</a>
-                    </div>
-                </div>
-            </article>
+<div class="dynamic-track-content">
+    <h2>SERVICIOS</h2>
+    <div style="margin-top: 2rem;">
+        <h3 style="color: var(--c-accent-pink); margin-bottom: 1rem;">FRONTEND</h3>
+        <p style="color: var(--c-text-muted);">HTML5, CSS3, JavaScript (ES6+), React, Vue</p>
+    </div>
+    <div style="margin-top: 2rem;">
+        <h3 style="color: var(--c-accent-pink); margin-bottom: 1rem;">DISEÑO UI/UX</h3>
+        <p style="color: var(--c-text-muted);">Figma, Adobe XD, Principios de Diseño, Wireframing, Prototipado</p>
+    </div>
+    
+    <div style="margin-top: 2rem; border-top: 1px dashed var(--c-accent-fuchsia); padding-top: 2rem;">
+        <h2 style="color: var(--c-accent-cyan); margin-bottom: 1rem;">PORTAFOLIO DE PROYECTOS</h2>
+        
+        <div style="margin-bottom: 2rem;">
+            <h4 style="color: var(--c-text); font-size: 1.2rem;">[Título del Proyecto 1]</h4>
+            <p style="color: var(--c-accent-fuchsia); font-family: var(--font-mono); font-size: 0.9rem;">Aplicación Backend / Desktop</p>
+            <p style="margin-top: 0.5rem; color: var(--c-text-light);">Un sistema completo para gestionar inventarios usando Java y MySQL con interfaz gráfica intuitiva.</p>
         </div>
-    </main>
-</body>
 
-</html>
+        <div>
+            <h4 style="color: var(--c-text); font-size: 1.2rem;">[Título del Proyecto 2]</h4>
+            <p style="color: var(--c-accent-fuchsia); font-family: var(--font-mono); font-size: 0.9rem;">Desarrollo Web</p>
+            <p style="margin-top: 0.5rem; color: var(--c-text-light);">Página web interactiva para un negocio local usando animaciones CSS e interactividad con JS.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+/* Custom Cursor */
+.cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    /* Start centered at 0,0 - JS will use translate3d */
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    will-change: transform, width, height;
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--c-accent-pink);
+    transition: width var(--t-fast), height var(--t-fast), background-color var(--t-fast);
+}
+
+.cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--c-accent-fuchsia);
+    transition: width var(--t-fast), height var(--t-fast), border-color var(--t-fast);
+    /* Spring animation handled by JS, but smooth transitions for state changes */
+}
+
+/* Hover States for Cursor */
+body.hovering .cursor-dot {
+    width: 4px;
+    height: 4px;
+}
+
+body.hovering .cursor-ring {
+    width: 50px;
+    height: 50px;
+    border-color: var(--c-text);
+}
+
+/* Glitch Text Effect (Very subtle for INTRO) */
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--c-accent-pink);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--c-accent-blue);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 80px, 0); }
+    5% { clip: rect(60px, 9999px, 10px, 0); }
+    10% { clip: rect(30px, 9999px, 90px, 0); }
+    15% { clip: rect(80px, 9999px, 20px, 0); }
+    20% { clip: rect(40px, 9999px, 70px, 0); }
+    25% { clip: rect(10px, 9999px, 80px, 0); }
+    100% { clip: rect(10px, 9999px, 80px, 0); } /* Mostly static */
+}
+
+/* Background Canvas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: var(--z-bg);
+    opacity: 0.5; /* Keep it subtle */
+    pointer-events: none;
+}

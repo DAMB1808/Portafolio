@@ -1,100 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
+<div class="dynamic-track-content">
+    <h2>SOBRE MÍ</h2>
+    <p>Creo que la programación y la música comparten una profunda conexión. Ambas dependen de la estructura, el ritmo, la armonía y la precisión.</p>
+    <p>Mi objetivo es construir interfaces que se sientan vivas, donde cada elemento tenga un propósito y el espacio hable tan fuerte como el contenido.</p>
+    
+    <div style="margin-top: 2rem; padding: 1.5rem; border-left: 4px solid var(--c-accent-pink); background: rgba(255, 20, 147, 0.1);">
+        <h3 style="color: var(--c-accent-pink); margin-bottom: 1rem;">PERFIL PROFESIONAL</h3>
+        <p>Soy un apasionado por la tecnología y el desarrollo de software. Mi meta principal es crear soluciones eficientes e innovadoras. Aspiro a convertirme en un desarrollador destacado, siempre dispuesto a aprender nuevas tecnologías y enfrentar retos complejos.</p>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Sobre Mi</title>
-    <link rel="stylesheet" href="../css/style/style.css">
-    <link rel="stylesheet" href="../css/layout/header.css">
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">Porta<span>folio</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="SobreMi.html" class="active">Sobre Mi</a></li>
-            <li><a href="Servicios.html">Servicios</a></li>
-            <li><a href="Contacto.html">Contacto</a></li>
+    <div style="margin-top: 2rem;">
+        <h3 style="color: var(--c-accent-fuchsia); margin-bottom: 1rem;">DATOS GENERALES</h3>
+        <ul style="list-style: none; padding: 0; font-family: var(--font-mono); color: var(--c-text-muted);">
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--c-accent-cyan);">Nombre:</strong> Diego Alessandro Mauricio Bonilla</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--c-accent-cyan);">Edad:</strong> 18 años</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--c-accent-cyan);">Formación:</strong> Estudiante en Fundación Kinal</li>
+            <li style="margin-bottom: 0.5rem;"><strong style="color: var(--c-accent-cyan);">Experiencia:</strong> 3 años programando</li>
         </ul>
-    </header>
-
-    <main class="main-content" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: left;">
-        <h1 style="text-align: center; margin-bottom: 0.5rem;">Desarrollador <span class="title-gold">Web y
-                Backend</span></h1>
-        <p style="text-align: center; color: #666; margin-bottom: 4rem; font-size: 1.2rem;">Conoce mi perfil, mis
-            habilidades y mi trayectoria profesional.</p>
-
-        <div
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
-            <!-- Descripción -->
-            <article class="card">
-                <h3>Perfil <span class="title-gold">Profesional</span></h3>
-                <p style="line-height: 1.8;">
-                    [Aquí va tu pequeña descripción. Ejemplo: Soy un apasionado por la tecnología y el desarrollo de
-                    software. Mi meta principal es crear soluciones eficientes e innovadoras. Aspiro a convertirme en un
-                    desarrollador destacado, siempre dispuesto a aprender nuevas tecnologías y enfrentar retos
-                    complejos.]
-                </p>
-            </article>
-
-            <!-- Datos Generales -->
-            <article class="card">
-                <h3>Datos <span class="title-gold">Generales</span></h3>
-                <ul style="list-style: none; padding: 0; color: #b3b3b3; line-height: 2.2; font-size: 1.1rem;">
-                    <li><strong style="color: var(--text-card);">Nombre:</strong> Diego Alessandro Mauricio Bonilla</li>
-                    <li><strong style="color: var(--text-card);">Edad:</strong> 18 años</li>
-                    <li><strong style="color: var(--text-card);">Formación:</strong> Estudiante en Fundación Kinal</li>
-                    <li><strong style="color: var(--text-card);">Experiencia:</strong> 3 años programando</li>
-                    <li><strong style="color: var(--text-card);">Contacto:</strong> diegomauriciogt@gmail.com, 3647-3531
-                    </li>
-                </ul>
-            </article>
-        </div>
-
-        <!-- Habilidades -->
-        <h2 style="text-align: center; margin-bottom: 2.5rem;"><span class="title-gold">Mis</span> Habilidades</h2>
-        <div class="cards-grid" style="margin-bottom: 5rem;">
-            <article class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--text-card);">85%</h3>
-                <span class="card-highlight" style="font-size: 1.2rem;">Java / Backend</span>
-                <p style="margin-bottom: 0; margin-top: 1rem;"></p>
-            </article>
-            <article class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--text-card);">75%</h3>
-                <span class="card-highlight" style="font-size: 1.2rem;">Desarrollo Web</span>
-                <p style="margin-bottom: 0; margin-top: 1rem;">HMTL, CSS, JSX, JavaFX</p>
-            </article>
-            <article class="card" style="text-align: center;">
-                <h3 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--text-card);">70%</h3>
-                <span class="card-highlight" style="font-size: 1.2rem;">Bases de Datos</span>
-                <p style="margin-bottom: 0; margin-top: 1rem;">[MySQL, consultas relacionales y estructuración]</p>
-            </article>
-        </div>
-
-        <!-- Currículum / Educación -->
-        <h2 style="text-align: center; margin-bottom: 2.5rem;">Educación y <span class="title-gold">Experiencia</span>
-        </h2>
-        <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <article class="card">
-                <span class="card-highlight">Educación Académica en Programación</span>
-                <h3>Fundación Kinal</h3>
-                <p style="color: var(--gold-accent); margin-bottom: 1rem;"><strong>Período:</strong> [Año Inicio] -
-                    Presente</p>
-                <p style="margin-bottom: 0; line-height: 1.8;">[Aquí puedes describir brevemente lo que has aprendido en
-                    tu carrera técnica, los fundamentos adquiridos y cómo la institución te ha formado para las demandas
-                    del sector tecnológico.]</p>
-            </article>
-            <article class="card">
-                <span class="card-highlight">Experiencia Práctica</span>
-                <h3>Proyectos y Prácticas</h3>
-                <p style="color: var(--gold-accent); margin-bottom: 1rem;"><strong>Período:</strong> [Año si aplica]</p>
-                <p style="margin-bottom: 0; line-height: 1.8;">[Si tienes pre-prácticas o algún proyecto grande que
-                    simule experiencia laboral real, descríbelo aquí resaltando tu rol y los logros alcanzados.]</p>
-            </article>
-        </div>
-    </main>
-</body>
-
-</html>
+    </div>
+</div>

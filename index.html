@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - The Album</title>
+    <meta name="description" content="Portfolio of a UX/UI Designer and Frontend Developer.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Background Grid Lines -->
+    <div class="grid-lines">
+        <div class="line-v"></div>
+        <div class="line-v"></div>
+        <div class="line-h"></div>
+        <div class="line-h"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="app-container">
+        
+        <div class="album-wrapper">
+            <div class="album" id="album">
+                
+                <!-- Front Cover -->
+                <div class="album-cover" id="album-cover">
+                    <div class="cover-content">
+                        <h1 class="glitch-text" data-text="PORTAFOLIO">PORTAFOLIO</h1>
+                        <p>[ UX/UI & FRONTEND ]</p>
+                    </div>
+                </div>
+
+                <!-- Inside Gatefold -->
+                <div class="album-inside">
+                    
+                    <!-- Left Side: Tracklist -->
+                    <div class="album-left">
+                        <span class="mono-label">[ THE TRACKLIST ]</span>
+                        <ul class="album-tracklist" id="tracklist-nav">
+                            <li class="nav-item active" data-url="pages/index.html">00. Intro</li>
+                            <li class="nav-item" data-url="pages/SobreMi.html">01. Sobre Mí</li>
+                            <li class="nav-item" data-url="pages/Servicios.html">02. Servicios / Portafolio</li>
+                            <li class="nav-item" data-url="pages/Contacto.html">03. Contacto</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right Side: Track Content Panels -->
+                    <div class="album-right" id="tracks-container">
+                        <!-- Content will be dynamically loaded here by navigation.js -->
+                        <div class="album-track-content active" id="dynamic-content">
+                            <!-- Placeholder loaded on init -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
