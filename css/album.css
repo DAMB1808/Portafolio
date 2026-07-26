@@ -202,14 +202,90 @@
 }
 
 @media (max-width: 768px) {
+    .album-wrapper {
+        width: 95vw;
+        height: 90vh; /* Taller on mobile to fit content */
+        max-height: none;
+        margin-top: 2vh;
+    }
+    
     .album-inside {
         flex-direction: column;
     }
-    .album {
-        width: 90%;
+    
+    /* When closed, cover takes appropriate space. When open, take full height */
+    .album, .album.is-open {
+        width: 100%;
+        height: 100%;
         aspect-ratio: auto;
     }
-    .album-left, .album-right {
-        height: 50%;
+
+    .album-left {
+        flex: 0 0 auto; /* Take only the space needed */
+        height: auto;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 2px solid var(--c-border);
+    }
+    
+    .album-right {
+        flex: 1 1 auto; /* Take remaining space */
+        height: 100%; /* Important for overflow-y inside */
+        padding: 1rem;
+        overflow-y: hidden; /* We handle scroll inside .album-track-content */
+    }
+
+    /* Tracklist adjusted for mobile */
+    .album-tracklist {
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for navigation */
+        gap: 10px;
+    }
+
+    .album-tracklist li {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        padding-left: 15px;
+    }
+
+    .album-tracklist li::before {
+        transform: scale(0.8);
+        left: -5px;
+    }
+    
+    /* Adjust cover size for mobile */
+    .cover-content {
+        padding: 1rem;
+    }
+    
+    .cover-content h1 {
+        font-size: 2rem;
+    }
+    
+    .cover-content p {
+        font-size: 0.8rem;
+    }
+
+    /* Content adjustments */
+    .album-track-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .album-tracklist {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    
+    .album-wrapper {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .album-cover, .album-inside {
+        border-radius: 0;
     }
 }
