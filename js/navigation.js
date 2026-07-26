@@ -14,8 +14,8 @@ class Navigation {
             this.albumCover.addEventListener('click', () => {
                 this.album.classList.add('is-open');
                 
-                // Load first track if empty
-                if(this.dynamicContent.innerHTML.trim() === '') {
+                // Load first track if empty (checking children.length ignores HTML comments)
+                if(this.dynamicContent.children.length === 0) {
                     const activeItem = document.querySelector('.nav-item.active');
                     if(activeItem) {
                         this.changeTrack(activeItem.getAttribute('data-url'), activeItem);
